@@ -8,7 +8,8 @@ let includeInternalScripts = false;
 const isLinkedMode = () => {
   // In circleci we are in linked mode. Detect by using the circle working directory,
   // rather than the present working directory.
-  const pwd = process.env.CIRCLE_WORKING_DIRECTORY || process.env.PWD;
+  //const pwd = process.env.CIRCLE_WORKING_DIRECTORY || process.env.PWD;
+  const pwd = process.env.CIRCLE_WORKING_DIRECTORY || process.env.PWD || 'grafana-toolkit';
 
   if (path.basename(pwd) === 'grafana-toolkit') {
     return true;
